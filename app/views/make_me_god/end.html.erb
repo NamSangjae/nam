@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .ppap{
+            text-align:center;
+        }
+        .pppap{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+        }
+        
+        
+    </style>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<title>신이 나를 만들때</title>
+</head>
+<body>
+    <div class="alert alert-success pppap" role="alert">생일이 <%=@birth%> 이고 이름은 <%=@name %>인 너는 신이 만들때 </p></div>
+
+
+<% @char.each_with_index do |r, index| %>
+    <p class= "alert alert-info ppap"><%=r %>가  <%=@persent[index]%> 퍼센트</p>
+  
+ 
+    <%if (@persent[index]>=80 )%>
+    
+        <img src="<%=asset_path '4.PNG'%>">
+
+    <%elsif(@persent[index]>=60)%>
+
+        <img src="<%=asset_path '5.PNG'%>">
+    
+    <%elsif(@persent[index]>=40)%>
+
+        <img src="<%=asset_path '3.PNG'%>">
+    
+    <%elsif(@persent[index]>=20)%>
+
+        <img src="<%=asset_path '2.PNG'%>">
+    
+    <% else%>
+        <img src="<%=asset_path '1.PNG'%>">
+
+    <% end%>
+<%end%>
+    
+
+
+
+
+
+</body>
+</html>
